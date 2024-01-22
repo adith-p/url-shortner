@@ -1,0 +1,15 @@
+{% extends 'shortner/base.html' %}
+
+{% block content %}
+<div class="container" style="margin-top: 20px;">
+    <form method="post" action="{% url 'redirect_url' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="short_id" class="form-label">Enter a short URL</label>
+            <input type="text" class="form-control" id="short_id" name="short_id">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
